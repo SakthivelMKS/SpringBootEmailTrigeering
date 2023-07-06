@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email</title>
+</head>
+    <body>
+    <div><b>Hi Production Support</div>
+       <p>
+      <b> List of Failed Expressions  </b>
+        </p>
+      
+      	<div>
+          <table>
+            <tr>
+              <th>Stage Id</th>
+              <th>Expression Name</th>
+              <th>Status</th>
+              <th>Reason</th>
+            </tr>
+            <tr th:each="audit : ${audits}">
+              <td th:text="${audit.stageId)}"></td>
+              <td th:text="${audit.expressionName}"></td>
+              <td th:text="${audit.status}"></td>
+               <td th:text="${audit.reason}"></td>              
+            </tr>
+          <table>
+        </div>
+    </body>
+</html>
